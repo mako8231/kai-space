@@ -1,35 +1,50 @@
-@import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+body {
+    background-color: rgb(157, 218, 193);
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+.forum-list-container {
+    margin: auto;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.forum-list-container {
+    margin-top: 20px;
+    background-color: rgb(212, 247, 234);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.forum-title {
+    margin-left: 25px
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.forum-link {
+    text-decoration: none;
+}
+
+.forum-link-item {
+    background-color: rgb(195, 214, 214);
+    border-color: rgb(212, 247, 234);
+}
+
+.options-link-item {
+    background-color: rgb(157, 218, 193);
+    border-color: rgb(157, 218, 193);
+}
+
+.form-login-register {
+    align-items: center;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    margin-top: 40px;
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color:rgb(212, 247, 234);
+}
+
+.form-button {
+    margin-top: 20px;
+    background-color: rgb(110, 158, 138);
+    border-color: rgb(110, 158, 138);
+}
+
+.bold-text {
+    font-weight: bold;
 }
