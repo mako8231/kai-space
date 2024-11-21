@@ -4,6 +4,7 @@ body {
 
 .forum-list-container {
     margin: auto;
+    box-shadow: 2px 2px 0px 0px rgba(42, 51, 39, 0.7);
 }
 
 .forum-list-container {
@@ -113,6 +114,11 @@ body {
     border-color: rgb(110, 158, 138);
 }
 
+.published-date-label {
+    font-style: italic;
+    color: rgba(42, 51, 39, 0.7);
+}
+
 .thread-follow-btn:hover {
     margin-left: 40px;
     background-color: rgb(62, 88, 77);
@@ -138,4 +144,5 @@ body {
     margin-bottom: 5px;
     border-radius: 20px;
     background-color: rgb(151, 211, 187);
+    box-shadow: 2px 2px 0px 0px rgba(42, 51, 39, 0.7);
 }

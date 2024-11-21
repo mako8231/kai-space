@@ -35,9 +35,15 @@ import TopThreadCommentary from '@/components/TopThreadCommentary.vue';
                 <h4>More of this User:</h4>
                 <div class="container">
                     <div class="row">
-                        <ThreadDrawingThumbnail/>
-                        <ThreadDrawingThumbnail/>
-                        <ThreadDrawingThumbnail/>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <ThreadDrawingThumbnail/>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <ThreadDrawingThumbnail/>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <ThreadDrawingThumbnail/>
+                        </div>
                     </div>
                 </div>
                 <hr>
@@ -61,6 +67,7 @@ import TopThreadCommentary from '@/components/TopThreadCommentary.vue';
             <!--Thread content section-->
             <div class="col-lg-8">
                 <h4>Thread title</h4>
+                <span class="published-date-label">Publicado em: 20/10/2022</span>
                 <p><span class="bold-text">On:</span> Drawings</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia optio, necessitatibus ut voluptatem animi rem, unde laboriosam pariatur corporis voluptates quasi alias fugiat quae libero veniam id explicabo nemo non?</p>
                 <ImageGallery/>
@@ -75,6 +82,9 @@ import TopThreadCommentary from '@/components/TopThreadCommentary.vue';
          </div>
 
          <div class="col-lg-8">
+            <div class="row">
+                <h4>Top Thread Commentaries:</h4>
+            </div>
             <TopThreadCommentary usernameID="1" postID="1"></TopThreadCommentary>
             <TopThreadCommentary usernameID="2" postID="2"></TopThreadCommentary>
             <TopThreadCommentary usernameID="3" postID="3"></TopThreadCommentary>
