@@ -17,6 +17,7 @@ body {
 
 .forum-link {
     text-decoration: none;
+    color: rgb(61, 90, 78);
 }
 
 .forum-link-item {
@@ -47,4 +48,61 @@ body {
 
 .bold-text {
     font-weight: bold;
+}
+
+.profile-picture {
+    width: 60px;
+}
+
+.post-profile-name {
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.post-list-title {
+    text-align: center;
+    
+}
+
+.post-list-thumbnail {
+    width: 300px;
+}
+
+.forum-post {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);;
+}
+
+.op-username-thread {
+    margin-left: 20px;
+} 
+
+.thumbnail-recommended {
+    width: 100px;
+}
+
+.thread-main-picture {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: auto;
+}
+
+.artist-tag {
+    background-color: rgb(151, 201, 201);
+    padding: 3px;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.other-tag {
+    background-color: rgb(159, 201, 151);
+    padding: 3px;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
 }

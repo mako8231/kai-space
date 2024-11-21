@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import ForumView from '@/views/ForumView.vue'
 import LoginView from '@/views/LoginView.vue'
 import RegisterView from '@/views/RegisterView.vue'
+import ArtDiscussView from '@/views/Forum/ArtDiscussView.vue'
+import ThreadView from '@/views/Thread/ThreadView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,7 +31,19 @@ const router = createRouter({
       path: '/forums',
       name: 'forums',
       component: ForumView
-    }
+    },
+
+    {
+      path: '/thread',
+      name: 'thread',
+      component: ThreadView
+    },
+    
+    {
+      path: '/forums/art-discussions',
+      name: 'art-discussions',
+      component: ArtDiscussView,
+    },
   ],
 })
 

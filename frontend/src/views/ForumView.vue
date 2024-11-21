@@ -46,7 +46,22 @@ import { RouterLink } from 'vue-router';
                     <RouterLink class="forum-link" to="/forums/hiring"><li class="list-group-item forum-link-item">Hiring</li></RouterLink>
                 </ul>
             </div>
+
+            <div class="forum-tag-section">
+                <div class="row d-flex align-items-center">
+                    <div class="forum-title pt-4">
+                        <span class="h4">Misc</span>
+                    </div>
+                </div>
+                <ul class="list-group p-4">
+                    <RouterLink class="forum-link" to="/forums/food"><li class="list-group-item forum-link-item">Food</li></RouterLink>
+                    <RouterLink class="forum-link" to="/forums/anime"><li class="list-group-item forum-link-item">Anime</li></RouterLink>
+                    <RouterLink class="forum-link" to="/forums/cartoon"><li class="list-group-item forum-link-item">Cartoon</li></RouterLink>
+                    <RouterLink class="forum-link" to="/forums/series"><li class="list-group-item forum-link-item">Series</li></RouterLink>
+                </ul>
             </div>
+            </div>
+
         </div>
     </div>
 </template>
