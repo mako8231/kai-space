@@ -106,3 +106,36 @@ body {
     margin-left: 10px;
     margin-right: 10px;
 }
+
+.thread-follow-btn {
+    margin-left: 40px;
+    background-color: rgb(110, 158, 138);
+    border-color: rgb(110, 158, 138);
+}
+
+.thread-follow-btn:hover {
+    margin-left: 40px;
+    background-color: rgb(62, 88, 77);
+    border-color: rgb(62, 88, 77);
+}
+
+.comment-pfp {
+    height: 60px;
+}
+
+.commentary-username {
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.commentary-body {
+    margin-top: 15px;
+}
+
+.top-commentary {
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    background-color: rgb(151, 211, 187);
+}

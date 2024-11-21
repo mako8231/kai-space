@@ -4,6 +4,7 @@ import ThreadDrawingThumbnail from "@/components/ThreadDrawingThumbnail.vue"
 import ImageGallery from '@/components/ImageGallery.vue'
 import CommentForm from '@/components/CommentForm.vue'
 import TagItem from '@/components/TagItem.vue';
+import TopThreadCommentary from '@/components/TopThreadCommentary.vue';
 </script>
 
 <template>
@@ -21,6 +22,7 @@ import TagItem from '@/components/TagItem.vue';
                         >
                     </RouterLink>
                     <span class="op-username-thread bold-text align-self-center">Username</span>
+                    <button class="thread-follow-btn btn btn-primary my-3">Follow</button>
                 </div>
                 <hr>
                 <!--Post numbers-->
@@ -62,9 +64,21 @@ import TagItem from '@/components/TagItem.vue';
                 <p><span class="bold-text">On:</span> Drawings</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia optio, necessitatibus ut voluptatem animi rem, unde laboriosam pariatur corporis voluptates quasi alias fugiat quae libero veniam id explicabo nemo non?</p>
                 <ImageGallery/>
+    
                 <hr>
 
             </div>
+       </div>
+       <div class="row">
+         <div class="col-lg-4">
+            
+         </div>
+
+         <div class="col-lg-8">
+            <TopThreadCommentary usernameID="1" postID="1"></TopThreadCommentary>
+            <TopThreadCommentary usernameID="2" postID="2"></TopThreadCommentary>
+            <TopThreadCommentary usernameID="3" postID="3"></TopThreadCommentary>
+         </div>
        </div>
     </div>
 </template>
