@@ -68,11 +68,13 @@ import TopThreadCommentary from '@/components/ThreadPost/TopThreadCommentary.vue
             </div>
             <!--Thread content section-->
             <div class="col-lg-8">
-                <h4>Thread title</h4>
-                <span class="published-date-label">Publicado em: 20/10/2022</span>
-                <p><span class="bold-text">On:</span> Drawings</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia optio, necessitatibus ut voluptatem animi rem, unde laboriosam pariatur corporis voluptates quasi alias fugiat quae libero veniam id explicabo nemo non?</p>
-                <ImageGallery/>
+                <div class="container">
+                    <h4>Thread title</h4>
+                    <span class="published-date-label">Published on: 20/10/2022</span>
+                    <p><span class="bold-text">On:</span> Drawings</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia optio, necessitatibus ut voluptatem animi rem, unde laboriosam pariatur corporis voluptates quasi alias fugiat quae libero veniam id explicabo nemo non?</p>
+                    <ImageGallery/>
+                </div>
     
                 <hr>
 
@@ -84,15 +86,21 @@ import TopThreadCommentary from '@/components/ThreadPost/TopThreadCommentary.vue
          </div>
 
          <div class="col-lg-8">
-            <div class="row">
-                <h4>Top Thread Commentaries:</h4>
+            <div class="container">
+                <div class="row">
+                    <h4>Top Thread Commentaries:</h4>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="container">
+                <span>231 replies <RouterLink class="forum-link" to="#">click here to view</RouterLink></span>
             </div>
 
             <TopThreadCommentary usernameID="1" postID="1"></TopThreadCommentary>
             <TopThreadCommentary usernameID="2" postID="2"></TopThreadCommentary>
             <TopThreadCommentary usernameID="3" postID="3"></TopThreadCommentary>
-            <div>
-            </div>
          </div>
        </div>
     </div>

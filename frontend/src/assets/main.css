@@ -129,6 +129,8 @@ body {
 }
 
 .comment-pfp {
+    border-style: solid;
+    border-color: rgba(42, 51, 39, 0.7);;
     height: 60px;
 }
 
@@ -139,6 +141,14 @@ body {
 
 .commentary-body {
     margin-top: 15px;
+}
+
+.exact-active .commentary-username-handle {
+    text-decoration: none;
+}
+.commentary-username-handle {
+    margin-left: 1rem;
+    color: rgb(33, 44, 40);
 }
 
 .top-commentary {

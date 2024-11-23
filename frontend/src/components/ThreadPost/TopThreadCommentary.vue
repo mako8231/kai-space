@@ -10,15 +10,18 @@ export default {
 
             user : {
                 '1' : {
+                    'handle' : 'yuguuddabbi',
                     'username' : 'Izutsumi Fan',
                     'profile' : 'https://i.pinimg.com/736x/8e/d6/93/8ed693978b73ab6a0de9cf6dd3a426d0.jpg'
                 },
                 '2' : {
+                    'handle' : 'bruhserk',
                     'username' : 'Guts o Guerreiro Berserk',
                     'profile' : 'https://i.pinimg.com/736x/c0/41/7a/c0417a53e6f15626c75b043405e3dcbe.jpg'
                 },
                 '3' : {
-                    'username' : "EVIL CLOWN",
+                    'handle' : 'evilclown',
+                    'username' : "PALHAÇO FEIO ASSUSTADOR",
                     'profile' : 'https://i.pinimg.com/736x/8f/c8/32/8fc8326a073edd29af1998bde098b205.jpg'
                 }
             }
@@ -42,7 +45,12 @@ export default {
                 </div>
                 
                 <div class="commentary-username mt-4">
-                    <RouterLink class="forum-link" to="#"><p>{{ this.user[this.usernameID].username }}</p></RouterLink>
+                    <div class="d-flex">
+                        <RouterLink class="forum-link" to="#"><p>{{ this.user[this.usernameID].username }}</p></RouterLink>
+                        <RouterLink style="text-decoration: none;" to="#">
+                            <span class="commentary-username-handle">@{{ this.user[this.usernameID].handle }}</span>
+                        </RouterLink>
+                    </div>
                 </div>
             </div>
         </div>
