@@ -51,5 +51,10 @@ export default {
                     <p>{{ commentary[this.postID] }}</p>
             </div>    
         </div>
+        <div class="row">
+            <div class="container d-flex align-items-center">
+                <RouterLink><i style="color: rgb(61, 90, 78); font-size: 2rem" class="bi bi-suit-heart"></i></RouterLink><span style="margin-left: 12px; font-size: 1.2rem" class="my-1">1</span>
+            </div>
+        </div>
     </div>
 </template>

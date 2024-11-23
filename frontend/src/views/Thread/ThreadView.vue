@@ -1,10 +1,10 @@
 <script setup>
-import ThreadStatusLabel from '@/components/ThreadStatusLabel.vue';
-import ThreadDrawingThumbnail from "@/components/ThreadDrawingThumbnail.vue"
-import ImageGallery from '@/components/ImageGallery.vue'
-import CommentForm from '@/components/CommentForm.vue'
-import TagItem from '@/components/TagItem.vue';
-import TopThreadCommentary from '@/components/TopThreadCommentary.vue';
+import ThreadStatusLabel from '@/components/ThreadPost/ThreadStatusLabel.vue';
+import ThreadDrawingThumbnail from "@/components/ThreadPost/ThreadDrawingThumbnail.vue"
+import ImageGallery from '@/components/ThreadPost/ImageGallery.vue'
+import CommentForm from '@/components/ThreadPost/CommentForm.vue'
+import TagItem from '@/components/ThreadPost/TagItem.vue';
+import TopThreadCommentary from '@/components/ThreadPost/TopThreadCommentary.vue';
 </script>
 
 <template>
@@ -13,16 +13,18 @@ import TopThreadCommentary from '@/components/TopThreadCommentary.vue';
             <div class="col-lg-4">
                 <h4>Credits:</h4>
                 <hr>
-                <div class="d-flex">
-                    <RouterLink to="/profile">
-                        <img 
-                        class="rounded-circle profile-picture"
-                        src="https://i.pinimg.com/736x/8e/d6/93/8ed693978b73ab6a0de9cf6dd3a426d0.jpg" 
-                        alt=""
-                        >
-                    </RouterLink>
-                    <span class="op-username-thread bold-text align-self-center">Username</span>
-                    <button class="thread-follow-btn btn btn-primary my-3">Follow</button>
+                <div class="container">
+                    <div class="d-flex">
+                        <RouterLink to="/profile">
+                            <img 
+                            class="rounded-circle profile-picture"
+                            src="https://i.pinimg.com/736x/8e/d6/93/8ed693978b73ab6a0de9cf6dd3a426d0.jpg" 
+                            alt=""
+                            >
+                        </RouterLink>
+                        <span class="op-username-thread bold-text align-self-center">Username</span>
+                        <button class="thread-follow-btn btn btn-primary my-3">Follow</button>
+                    </div>
                 </div>
                 <hr>
                 <!--Post numbers-->
@@ -85,9 +87,12 @@ import TopThreadCommentary from '@/components/TopThreadCommentary.vue';
             <div class="row">
                 <h4>Top Thread Commentaries:</h4>
             </div>
+
             <TopThreadCommentary usernameID="1" postID="1"></TopThreadCommentary>
             <TopThreadCommentary usernameID="2" postID="2"></TopThreadCommentary>
             <TopThreadCommentary usernameID="3" postID="3"></TopThreadCommentary>
+            <div>
+            </div>
          </div>
        </div>
     </div>
