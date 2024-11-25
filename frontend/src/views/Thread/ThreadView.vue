@@ -18,7 +18,7 @@ import TopThreadCommentary from '@/components/ThreadPost/TopThreadCommentary.vue
                         <RouterLink to="/profile">
                             <img 
                             class="rounded-circle profile-picture"
-                            src="https://i.pinimg.com/736x/8e/d6/93/8ed693978b73ab6a0de9cf6dd3a426d0.jpg" 
+                            src="../../../src/assets/pictures/pfp.jpg" 
                             alt=""
                             >
                         </RouterLink>

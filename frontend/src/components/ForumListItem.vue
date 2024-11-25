@@ -9,7 +9,7 @@
                             <RouterLink to="/profile">
                                 <img 
                                 class="rounded-circle profile-picture"
-                                src="https://i.pinimg.com/736x/8e/d6/93/8ed693978b73ab6a0de9cf6dd3a426d0.jpg" 
+                                src="../assets/pictures/pfp.jpg" 
                                 alt=""
                                 >
                             </RouterLink>
@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="row d-flex">
-                        <RouterLink to="/thread"><img class="rounded mx-auto d-block post-list-thumbnail" src="https://i.pinimg.com/736x/a8/e4/bd/a8e4bd9411fa1dec31aa444ab06ac503.jpg" alt=""></RouterLink>
+                        <RouterLink to="/thread"><img class="rounded mx-auto d-block post-list-thumbnail" src="../assets/pictures/landscape.jpg" alt=""></RouterLink>
                     </div>
                     <hr>
                     <div class="row">

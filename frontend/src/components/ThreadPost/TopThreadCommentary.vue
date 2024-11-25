@@ -3,26 +3,26 @@ export default {
     data : function(){
         return {
             commentary : {
-                '1' : "Oi achei o seu desenho legal!!! Muito bom você faz commision?",
-                '2' : "Cara é a Izutsumi de Berserk mano",
-                '3' : "VÁ PARA O MEU CIRCO!!!!"
+                '1' : "Nice!",
+                '2' : "Very lovely",
+                '3' : "Great photography"
             },
 
             user : {
                 '1' : {
-                    'handle' : 'yuguuddabbi',
-                    'username' : 'Izutsumi Fan',
-                    'profile' : 'https://i.pinimg.com/736x/8e/d6/93/8ed693978b73ab6a0de9cf6dd3a426d0.jpg'
+                    'handle' : 'user1',
+                    'username' : 'Wurauel',
+                    'profile' : '../../src/assets/pictures/pfp.jpg'
                 },
                 '2' : {
-                    'handle' : 'bruhserk',
-                    'username' : 'Guts o Guerreiro Berserk',
-                    'profile' : 'https://i.pinimg.com/736x/c0/41/7a/c0417a53e6f15626c75b043405e3dcbe.jpg'
+                    'handle' : 'munlixa300',
+                    'username' : 'Bosirob',
+                    'profile' : '../../src/assets/pictures/pfp2.webp'
                 },
                 '3' : {
-                    'handle' : 'evilclown',
-                    'username' : "PALHAÇO FEIO ASSUSTADOR",
-                    'profile' : 'https://i.pinimg.com/736x/8f/c8/32/8fc8326a073edd29af1998bde098b205.jpg'
+                    'handle' : 'whurru120',
+                    'username' : "Mulniak",
+                    'profile' : '../../src/assets/pictures/pfp3.jpeg'
                 }
             }
         }
