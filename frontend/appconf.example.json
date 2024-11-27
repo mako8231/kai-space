@@ -1,6 +1,7 @@
 {
     "backend" : {
         "port" : "8000",
-        "host": "localhost"
+        "host": "localhost",
+        "csrf_token" : ""
     }
 }

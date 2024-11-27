@@ -11,6 +11,8 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Validator;
+
 
 class RegisteredUserController extends Controller
 {
@@ -19,14 +21,33 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+
+    protected function formValidator(Request $request){
+        $rules = [
+            'username' => ['required', 'string', 'max:255', 'unique:App\Models\User,username'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:App\Models\User,email'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ];
+
+        $messages = [
+            'required' => 'The :attribute field is required.',
+            'unique' => 'This :attribute is being used.'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if ($validator->errors()) {
+            return $validator->errors();
+        }
+
+        return [];
+    }
+
     public function store(Request $request)
     {
-        $request->validate([
-            'username' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
-
+        $errors = $this->formValidator($request);
+        if (sizeof($errors) > 0) {
+            return response()->json($errors)->setStatusCode(422);
+        }
 
 
         $user = User::create([

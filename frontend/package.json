@@ -14,9 +14,11 @@
   "dependencies": {
     "@floating-ui/vue": "^1.1.5",
     "@popperjs/core": "^2.11.8",
+    "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "jquery": "^3.7.1",
+    "js-cookie": "^3.0.5",
     "pinia": "^2.2.6",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"

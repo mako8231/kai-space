@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@432&family=Shadows+Into+Light&display=swap');
+
 body {
-    font-family: "Shadows Into Light", cursive;
-    font-weight: 400;
+    font-family: "Parkinsans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
     font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
     background-color: rgb(157, 218, 193);
 }
 
