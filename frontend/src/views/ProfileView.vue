@@ -51,8 +51,12 @@ export default {
             
             <div class="container activity">
                 <div class="recent">
-                    <h3>Forum's Recent Activity:</h3>
                     <ProfileNavigation/>
+                    <div class="container mx-2">
+                        <div class="about-me-title">
+                            
+                        </div>
+                    </div>
                 </div>
                 <div class="latest-art">
                     

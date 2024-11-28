@@ -219,3 +219,8 @@ body {
     box-shadow: 0px 0px 12px 0px #000000;
     background-color: rgb(110, 158, 138);
 }
+
+.profile-nav {
+    margin-top: 10px;
+    background-color: rgb(157, 218, 193);
+}
