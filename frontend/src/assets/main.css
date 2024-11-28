@@ -205,3 +205,17 @@ body {
     text-shadow: 2px 2px black;
 }
 
+.jumbotron.profile-details p {
+    font-size: 20pt;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.activity .recent h3 {
+    margin-top: 25px;
+    color: white;
+    text-shadow: 2px 2px #000000;
+    padding: 15px;
+    box-shadow: 0px 0px 12px 0px #000000;
+    background-color: rgb(110, 158, 138);
+}

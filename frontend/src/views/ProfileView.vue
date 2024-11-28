@@ -1,8 +1,14 @@
 <script>
+import ProfileNavigation from '@/components/Profile/ProfileNavigation.vue';
+
+export default {
+    components : {
+        ProfileNavigation
+    }
+}
 </script>
 
 <template>
-    
     <div class="banner">
 
             <div class="jumbotron profile-cover-banner">
@@ -41,7 +47,21 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
+            
+            <div class="container activity">
+                <div class="recent">
+                    <h3>Forum's Recent Activity:</h3>
+                    <ProfileNavigation/>
+                </div>
+                <div class="latest-art">
+                    
+                </div>
+                <div class="latest-threads-discussions">
+
+                </div>
+                
+            </div>
         </div>
 
 </template>
