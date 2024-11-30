@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kai-space
+    container_name: kai-space
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./backend:/var/www
+      - ./backend/.env:/var/www/.env
+    ports:
+      - 9000:9000
+    environment:
+      - APP_ENV=local
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: kai-space-nginx
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/var/www
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app
+    networks:
+      - app-network        
+
+  node:
+    platform: linux/x86_64 #this line is optional if you are using Mac Silicon chip (M1/M2/M3)
+    build:
+      context: .
+      dockerfile: dockerfile.node
+    image: kai-space-front
+    container_name: kai-space-front
+    ports:
+    - "3000:3000"
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./frontend:/var/www
+    networks:
+      - app-network
+    environment:
+      - NODE_ENV=development
+
+  db:
+    platform: linux/x86_64 #this line is optional if you are using Mac Silicon chip (M1/M2/M3)
+    image: mysql:8.0
+    container_name: kai-space-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - app-network
+    ports:
+      - "3306:3306"
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local

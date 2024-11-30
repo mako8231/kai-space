@@ -1,0 +1,22 @@
+#Set the base image
+FROM node:20.11.1-alpine
+
+#Set the working dir
+WORKDIR /var/www
+
+#Copy `package.json` and `package-lock.json`
+COPY ./frontend/package.json .
+COPY ./frontend/package-lock.json .
+
+#Install dependencies
+
+RUN npm install --verbose
+
+#Copy projects files into the image 
+COPY ./frontend .
+
+#Expose the ports 
+EXPOSE 3000
+
+#Start the vite server 
+CMD ["npm", "run", "dev"]
