@@ -8,10 +8,6 @@ services:
     image: kai-space
     container_name: kai-space
     restart: unless-stopped
-    working_dir: /var/www
-    volumes:
-      - ./backend:/var/www
-      - ./backend/.env:/var/www/.env
     ports:
       - 9000:9000
     environment:
