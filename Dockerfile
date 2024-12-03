@@ -35,6 +35,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy the existing application directory contents to the working directory
 COPY ./backend /var/www
 
+#Copy the enviroment
+COPY ./.env /var/www/
+
 # Copy the existing application directory permissions to the working directory
 COPY --chown=www-data:www-data ./backend /var/www
 

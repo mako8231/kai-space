@@ -10,8 +10,20 @@ services:
     restart: unless-stopped
     ports:
       - 9000:9000
+    env_file:
+      - .env
     environment:
-      - APP_ENV=local
+      - APP_ENV
+      - APP_KEY
+      - APP_DEBUG
+      - FRONTEND_URL
+      - SANCTUM_STATEFUL_DOMAINS
+      - DB_CONNECTION
+      - DB_HOST
+      - DB_PORT
+      - DB_DATABASE
+      - DB_USERNAME
+      - DB_PASSWORD
     networks:
       - app-network
 
