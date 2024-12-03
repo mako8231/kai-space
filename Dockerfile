@@ -1,6 +1,8 @@
 #Setting up the base image
 FROM php:8.1.2-fpm
 
+RUN mkdir -p /app
+
 # Set working directory
 WORKDIR /var/www
 
@@ -46,8 +48,8 @@ RUN chown -R www-data:www-data /var/www/storage && \
     chmod -R 775 /var/www/storage && \
     chown -R www-data:www-data /var/www/bootstrap/cache && \
     chmod -R 775 /var/www/bootstrap/cache && \
-    chown -R www-data:www-data /var/www/tinker_config && \
-    chmod -R 775 /var/www/tinker_config 
+    chown -R www-data:www-data /app && \
+    chmod -R 775 /app 
 # Change current user to www
 
 

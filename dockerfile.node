@@ -15,6 +15,10 @@ RUN npm install --verbose
 #Copy projects files into the image 
 COPY ./frontend .
 
+#Copy the enviroment related to frontend
+COPY ./.env.frontend /var/www/.env
+
+
 #Expose the ports 
 EXPOSE 3000
 

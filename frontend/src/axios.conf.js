@@ -1,7 +1,8 @@
 import Axios from 'axios'
-import config from '../appconf.json'
 
-const ApiEndpoint = `http://localhost:8000`
+const ApiEndpoint = import.meta.env.VITE_API_ENDPOINT;
+const Token = import.meta.ENDPOINT_KEY
+
 
 const axios = Axios.create({
     baseURL: ApiEndpoint,
@@ -10,7 +11,7 @@ const axios = Axios.create({
     headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        'X-CSRF-TOKEN': config['csrf_token']
+        'X-CSRF-TOKEN': Token
     }
 })
 

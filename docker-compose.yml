@@ -12,6 +12,8 @@ services:
       - 9000:9000
     env_file:
       - .env
+    volumes:
+      - ./backend:/var/www
     environment:
       - APP_ENV
       - APP_KEY
@@ -42,17 +44,23 @@ services:
 
   node:
     platform: linux/x86_64 #this line is optional if you are using Mac Silicon chip (M1/M2/M3)
+    develop:
+      watch:
+        - action: sync+restart
+        - path: ./frontend
+        - target: /var/www
+        - ignore: 
+            - node-modules
     build:
       context: .
       dockerfile: dockerfile.node
     image: kai-space-front
+    volumes:
+      - ./frontend:/var/www
     container_name: kai-space-front
     ports:
     - "3000:3000"
     restart: unless-stopped
-    working_dir: /var/www
-    volumes:
-      - ./frontend:/var/www
     networks:
       - app-network
     environment:
