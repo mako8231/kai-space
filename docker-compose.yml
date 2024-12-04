@@ -10,22 +10,8 @@ services:
     restart: unless-stopped
     ports:
       - 9000:9000
-    env_file:
-      - .env
     volumes:
       - ./backend:/var/www
-    environment:
-      - APP_ENV
-      - APP_KEY
-      - APP_DEBUG
-      - FRONTEND_URL
-      - SANCTUM_STATEFUL_DOMAINS
-      - DB_CONNECTION
-      - DB_HOST
-      - DB_PORT
-      - DB_DATABASE
-      - DB_USERNAME
-      - DB_PASSWORD
     networks:
       - app-network
 
@@ -71,6 +57,8 @@ services:
     image: mysql:8.0
     container_name: kai-space-mysql
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}

@@ -15,4 +15,30 @@ const axios = Axios.create({
     }
 })
 
+
+export async function endpointReq(method, route, data) 
+{
+    const config = {
+        method,
+        url: route,
+        data,
+    }
+
+    try 
+    {
+        //Using axios to calling out to the endpoint route 
+        const response = await axios(config);
+
+        //if everything works, give the response 
+        console.log(response);
+
+        return response.data;
+
+    } catch (err) {
+        console.log("Error during fetch: ", err)
+        throw err 
+    }
+
+}
+
 export default axios

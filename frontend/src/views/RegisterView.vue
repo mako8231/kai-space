@@ -1,7 +1,7 @@
 <script>
 import { error } from 'jquery';
 import { rewriteDefault } from 'vue/compiler-sfc';
-import axios from '@/axios.conf.js'
+import { axios, endpointReq } from '@/axios.conf.js'
 import Cookies from 'js-cookie'
 import router from '@/main';
 
@@ -25,26 +25,7 @@ export default {
 
     methods : {
         async formSubmit(e){
-            axios.post('/register', this.formData)
-                .then(async function (response){
-                    //if everything succeded, redirect
-                    console.log(response)
-                    await router.push('/').catch((err) => {
-                        console.log("error while redirecting")
-                    })
-                })
-                .catch((error) => {
-                    console.log(error)
-                    if (error.status === 422){
-                        const errors = error.response.data;
-                        console.log(errors)
-                        this.errors = errors
-
-                        //bad form data
-                        //errors = ['email', 'password', 'username']
-                    }
-                });
-
+            endpointReq("POST", "/register", this.formData);
         }
     }
 }
