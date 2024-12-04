@@ -32,7 +32,7 @@ RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring zip exif pcntl
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer 
 
 # Copy the existing application directory contents to the working directory
 COPY ./backend /var/www
