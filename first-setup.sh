@@ -26,6 +26,8 @@ echo "BUILDING THE CONTAINERS AGAIN..."
 
 ./docker-build.sh
 
+chmod 666 ./backend/.env
+
 #clear the laravel's routes and config cache and set a APP key for .env
 docker exec -it kai-space php artisan route:cache;
 docker exec -it kai-space php artisan config:cache;
