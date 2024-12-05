@@ -47,9 +47,9 @@ RUN chown -R www-data:www-data /var/www/storage && \
     chmod -R 775 /var/www/bootstrap/cache && \
     chown -R www-data:www-data /app && \
     chmod -R 775 /app 
+
+
 # Change current user to www
-
-
 USER www-data
 
 # Expose port 9000 and start php-fpm server
