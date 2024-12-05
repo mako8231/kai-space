@@ -1,16 +1,27 @@
 <script>
 import ProfileNavigation from '@/components/Profile/ProfileNavigation.vue';
+import AboutSection from '@/components/Profile/AboutSection.vue'
 
 export default {
+    data : function () {
+        return {
+            navIndex: 0
+        }
+    },
+    
     components : {
-        ProfileNavigation
-    }
+        ProfileNavigation,
+        AboutSection
+    },
+
 }
+
+
+
 </script>
 
 <template>
     <div class="banner">
-
             <div class="jumbotron profile-cover-banner">
                 <div class="container for-about">
                     <div class="container">
@@ -51,7 +62,7 @@ export default {
             
             <div class="container activity">
                 <div class="recent">
-                    <ProfileNavigation/>
+                    <ProfileNavigation @indexUpdate="(index) => {this.navIndex = index}"/>
                     <div class="container mx-2">
                         <div class="about-me-title">
                             
@@ -61,9 +72,10 @@ export default {
                 <div class="latest-art">
                     
                 </div>
-                <div class="latest-threads-discussions">
+                
+                <!--<div class="latest-threads-discussions">
 
-                </div>
+                </div>-->
                 
             </div>
         </div>

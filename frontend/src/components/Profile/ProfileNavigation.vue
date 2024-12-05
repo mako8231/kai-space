@@ -1,14 +1,29 @@
 <script>
+
 export default {
+
     data : function() {
         return {
-            items : ['About', 'Art Posts', 'Thread Discussions', 'Comments'],
-            active_index : 0
+            items : [{value: 'About', id: '#about-me'}, 
+                     {value: 'Art Posts', id: '#art-posts'}, 
+                     {value: 'Thread Discussions', id: '#thread-disc'}, 
+                     {value: 'Comments', id: '#comments'}
+                ],
+            activeIndex : 0,
         }
     },
 
+    methods: {
+        setIndex : function(value) {
+            this.activeIndex = value
+            this.$emit('indexUpdate', this.activeIndex)
+        }
+    }
 
 }
+
+
+
 </script>
 
 <template>
@@ -20,11 +35,9 @@ export default {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    
-                    <li v-for="index, value in this.items" class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">About</a>
-                    </li>
-                   
+                    <li v-for="data, index in this.items" :key="index" class="nav-item">
+                        <a @click.stop="setIndex(index)" class="nav-link active" aria-current="page" :href="data.id">{{ data.value }}</a>
+                    </li>                   
                 </ul>
                 </div>
         </div>
