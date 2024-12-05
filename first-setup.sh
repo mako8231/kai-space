@@ -14,7 +14,7 @@ chown -R ${UID} ./backend/bootstrap
 chmod -R 777 ./backend/storage;
 chmod -R 777 ./backend/bootstrap;
 
-mdkir ./backend/vendor
+mkdir ./backend/vendor
 chmod -R 777 ./backend/vendor;
 
 
