@@ -6,7 +6,7 @@ class DynamicCors
 {
     public function handle($request, Closure $next)
     {
-        $allowedOrigins = explode(',', env('FRONTEND_URL', 'http://localhost:3000'));
+        $allowedOrigins = explode(',', env('FRONTEND_URL'));
         $origin = $request->headers->get('Origin');
 
         if (in_array($origin, $allowedOrigins)) 

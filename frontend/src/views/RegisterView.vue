@@ -1,7 +1,7 @@
 <script>
 import { error } from 'jquery';
 import { rewriteDefault } from 'vue/compiler-sfc';
-import { axios, endpointReq } from '@/axios.conf.js'
+import { endpointReq } from '@/axios.conf.js'
 import Cookies from 'js-cookie'
 import router from '@/main';
 
