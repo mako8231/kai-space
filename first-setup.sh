@@ -14,13 +14,15 @@ chown -R ${UID} ./backend/bootstrap
 chmod -R 777 ./backend/storage;
 chmod -R 777 ./backend/bootstrap;
 
+#vendor
 mkdir ./backend/vendor
 chmod -R 777 ./backend/vendor;
-
 
 #install all the composer dependencies
 docker exec -it kai-space composer install;
 
+cd ./frontend && npm install
+cd ..
 
 echo "BUILDING THE CONTAINERS AGAIN..."
 
@@ -35,3 +37,8 @@ docker exec -it kai-space php artisan key:generate
 
 echo "MIGRATING THE DATABASE";
 docker exec -it kai-space php artisan migrate;
+
+echo "CONGRATULATIONS: Your app is ready to go:";
+echo "frontend: http://localhost:3000"
+echo "api endpoint: http://localhost:8080"
+
