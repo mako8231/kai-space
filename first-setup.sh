@@ -1,8 +1,8 @@
 echo "EXECUTE THIS SCRIPT ONLY IF YOU ALREADY CLONED THIS REPOSITORY";
 echo "BUILDING THE IMAGES...";
-docker compose build;
 
 cp .env.example .env 
+docker compose build;
 
 echo "ADJUSTING VOL PERMISSIONS";
 #not the best approach on prod tho keep that in mind...
