@@ -35,10 +35,10 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer 
 
 # Copy the existing application directory contents to the working directory
-COPY ./backend /var/www
+COPY ./backend .
 
 # Copy the existing application directory permissions to the working directory
-COPY --chown=www-data:www-data ./backend /var/www
+COPY --chown=www-data:www-data ./backend .
 
 # adjusting the permissions
 RUN chown -R www-data:www-data /var/www/storage && \

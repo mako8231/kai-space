@@ -8,7 +8,7 @@ do
     case $opt in
         "Laravel APP")
             echo "logging in to the kai-space..."
-            docker exec -it kai-space sh
+            docker exec -it kai-space bash
             ;;
         "Vue3 + Vite APP")
             echo "logging in to kai-space-front..."
@@ -16,7 +16,7 @@ do
             ;;
         "MYSQL server")
             echo "logging in to kai-space-mysql..."
-            docker exec -it kai-space-mysql sh  
+            docker exec -it kai-space-mysql bash
             ;;
         "Quit")
             break

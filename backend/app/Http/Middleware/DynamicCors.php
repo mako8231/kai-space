@@ -13,7 +13,7 @@ class DynamicCors
         {
             header('Access-Control-Allow-Origin: ' . $origin);
         }
-        error_log("$allowedOrigins");
+        //error_log("$allowedOrigins");
         error_log("$origin");
         
 
