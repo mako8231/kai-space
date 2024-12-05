@@ -11,6 +11,7 @@ chown -R ${UID} ./backend/storage
 chown -R ${UID} ./backend/bootstrap
 chmod -R 777 ./backend/storage;
 chmod -R 777 ./backend/bootstrap;
+chmod -R 777 ./backend/vendor;
 
 
 #install all the composer dependencies
