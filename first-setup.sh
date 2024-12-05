@@ -21,6 +21,11 @@ chmod -R 777 ./backend/vendor;
 #install all the composer dependencies
 docker exec -it kai-space composer install;
 
+
+echo "BUILDING THE CONTAINERS AGAIN..."
+
+./docker-build.sh
+
 #clear the laravel's routes and config cache and set a APP key for .env
 docker exec -it kai-space php artisan route:cache;
 docker exec -it kai-space php artisan config:cache;
@@ -28,9 +33,3 @@ docker exec -it kai-space php artisan key:generate
 
 echo "MIGRATING THE DATABASE";
 docker exec -it kai-space php artisan migrate;
-
-echo "BUILDING THE CONTAINERS AGAIN..."
-
-./docker-build.sh
-
-
