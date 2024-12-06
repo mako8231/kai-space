@@ -1,6 +1,11 @@
 <script>
 import ProfileNavigation from '@/components/Profile/ProfileNavigation.vue';
+//Section fields
 import AboutSection from '@/components/Profile/AboutSection.vue'
+import ArtGallery from '@/components/Profile/ArtGallery.vue'
+import ThreadComment from '@/components/Profile/ThreadComment.vue'
+import ThreadDiscussion from '@/components/Profile/ThreadDiscussion.vue'
+
 
 export default {
     data : function () {
@@ -11,9 +16,11 @@ export default {
     
     components : {
         ProfileNavigation,
-        AboutSection
+        AboutSection,
+        ThreadComment,
+        ThreadDiscussion,
+        ArtGallery
     },
-
 }
 
 
@@ -62,6 +69,7 @@ export default {
             
             <div class="container activity">
                 <div class="recent">
+                    {{ this.navIndex }}
                     <ProfileNavigation @indexUpdate="(index) => {this.navIndex = index}"/>
                     <div class="container mx-2">
                         <div class="about-me-title">
@@ -69,13 +77,12 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="latest-art">
-                    
-                </div>
-                
-                <!--<div class="latest-threads-discussions">
 
-                </div>-->
+                <AboutSection v-if="this.navIndex == 0"/>
+                <ArtGallery v-if="this.navIndex == 1"/>
+                <ThreadComment v-if="this.navIndex == 2"/>
+                <ThreadDiscussion v-if="this.navIndex == 3"/>
+                
                 
             </div>
         </div>
