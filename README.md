@@ -1,5 +1,8 @@
 # kai-space
 
+- [English guide](#en)
+- [Guia em Português](#pt-br)
+
 ### EN
 
 **About the Project:** 📔🖌️
