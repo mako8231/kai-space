@@ -6,7 +6,7 @@ export default {
         return {
             items : [{value: 'About', id: '#about-me'}, 
                      {value: 'Art Posts', id: '#art-posts'}, 
-                     {value: 'Thread Discussions', id: '#thread-disc'}, 
+                     {value: 'Thread Topics', id: '#thread-disc'}, 
                      {value: 'Comments', id: '#comments'}
                 ],
             activeIndex : 0,

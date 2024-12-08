@@ -69,7 +69,7 @@ export default {
             
             <div class="container activity">
                 <div class="recent">
-                    {{ this.navIndex }}
+                    <!--{{ this.navIndex }}-->
                     <ProfileNavigation @indexUpdate="(index) => {this.navIndex = index}"/>
                     <div class="container mx-2">
                         <div class="about-me-title">
@@ -80,8 +80,8 @@ export default {
 
                 <AboutSection v-if="this.navIndex == 0"/>
                 <ArtGallery v-if="this.navIndex == 1"/>
-                <ThreadComment v-if="this.navIndex == 2"/>
-                <ThreadDiscussion v-if="this.navIndex == 3"/>
+                <ThreadDiscussion v-if="this.navIndex == 2"/>
+                <ThreadComment v-if="this.navIndex == 3"/>
                 
                 
             </div>

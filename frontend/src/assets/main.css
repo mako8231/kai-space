@@ -224,3 +224,29 @@ body {
     margin-top: 10px;
     background-color: rgb(157, 218, 193);
 }
+
+.topic-item {
+    background-color: rgb(245, 255, 251);
+}
+
+.topic-title span.title {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-size: 15pt;
+}
+
+.thread-item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.topic-date {
+    font-size: 10pt;
+    margin-left: 5rem;
+}
+
+.topic-body span {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: justify;
+}
