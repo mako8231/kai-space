@@ -250,3 +250,11 @@ body {
     padding-right: 2rem;
     text-align: justify;
 }
+
+.topic-item .button-group .btn {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(110, 158, 138);
+    border-color: rgb(110, 158, 138);
+}

@@ -1,30 +1,10 @@
-<script>
+<script setup>
 import ProfileNavigation from '@/components/Profile/ProfileNavigation.vue';
 //Section fields
 import AboutSection from '@/components/Profile/AboutSection.vue'
 import ArtGallery from '@/components/Profile/ArtGallery.vue'
 import ThreadComment from '@/components/Profile/ThreadComment.vue'
 import ThreadDiscussion from '@/components/Profile/ThreadDiscussion.vue'
-
-
-export default {
-    data : function () {
-        return {
-            navIndex: 0
-        }
-    },
-    
-    components : {
-        ProfileNavigation,
-        AboutSection,
-        ThreadComment,
-        ThreadDiscussion,
-        ArtGallery
-    },
-}
-
-
-
 </script>
 
 <template>
@@ -80,8 +60,8 @@ export default {
 
                 <AboutSection v-if="this.navIndex == 0"/>
                 <ArtGallery v-if="this.navIndex == 1"/>
-                <ThreadDiscussion v-if="this.navIndex == 2"/>
-                <ThreadComment v-if="this.navIndex == 3"/>
+                <ThreadDiscussion v-if="this.navIndex == 2" typeKey="1"/>
+                <ThreadDiscussion v-if="this.navIndex == 3" typeKey="2"/>
                 
                 
             </div>
