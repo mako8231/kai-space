@@ -1,11 +1,4 @@
 # kai-space
-### PT-BR
-
-**Sobre o Projeto:** 📔🖌️
-
-O projeto se trata de uma *engine* de forums, com foco na construção de comunidades artísticas, trazendo uma mescla de *imageboards* ou threads categorizadas.
-
-### EN
 
 **About the Project:** 📔🖌️
 
@@ -16,6 +9,11 @@ System requirements:
 - Docker;
 - npm (preferrably `>=10.2.4`);
 - node (`>=20`)
+
+Some notes:
+- .env.example refers to the `backend` enviroment variable
+- .env.example.frontend refers to the `frontend` enviroment variable
+
 
 **Clone this repository**
 
@@ -46,8 +44,19 @@ cd frontend && npm install && cd ..
 - Frontend Application: http://localhost:3000;
 - Backend Application: http://localhost:8080
 
+**Troubleshooting**
+
+Q: Laravel asking me the application key, how do I get it? 
+R: Acess the running docker enviroment related to backend with `./run-docker-env` or type `docker exec -it kai-space bash`, then type `php artisan key:generate`  
+
+Q: when I create a new endpoint route on laravel, it didn't take changes;
+R: Probably the issue is related on how Laravel handles the internal route cache, just do the same steps to log into the `backend` docker and then type `php artisan route:cache`, it will clear the old routes caches, recognizing the newer ones.
 
 
+### PT-BR
 
+**Sobre o Projeto:** 📔🖌️
 
+O projeto se trata de uma *engine* de forums, com foco na construção de comunidades artísticas, trazendo uma mescla de *imageboards* ou threads categorizadas.
 
+### EN
