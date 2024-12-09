@@ -22,26 +22,26 @@ Some notes:
 
 **Clone this repository**
 
-```
+```bash
 #cloning 
 git clone https://github.com/mako8231/kai-space.git
 ```
 
 **After the cloning, go into the repository locally:**
 
-```
+```bash
 cd kai-space
 ```
 
 **You need to install the local NPM packages for the frontend enviroment**
 
-```
+```bash
 cd frontend && npm install && cd ..
 ```
 
 **And then, execute the `first-setup.sh` script, which will give you the necessary steps to get the application working:**
 
-```
+```bash
 ./first-setup.sh
 ```
 
@@ -79,25 +79,25 @@ Alguns pontos a considerar:
 
 **Clone esse repositório**
 
-```
+```bash
 git clone https://github.com/mako8231/kai-space.git
 ```
 
 **Acesse o repositório clonado:**
 
-```
+```bash
 cd kai-space
 ```
 
 **Você precisa instalar os pacotes node para o ambiente frontend**
 
-```
+```bash
 cd frontend && npm install && cd ..
 ```
 
 **Então, execute o script `first-setup.sh`, que realizará toda a configuração necessária para o ambiente de desenvolvimento funcionar:**
 
-```
+```bash
 ./first-setup.sh
 ```
 
