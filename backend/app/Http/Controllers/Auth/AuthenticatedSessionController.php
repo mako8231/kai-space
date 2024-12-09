@@ -22,6 +22,7 @@ class AuthenticatedSessionController extends Controller
         return response()->noContent();
     }
 
+
     /**
      * Destroy an authenticated session.
      */

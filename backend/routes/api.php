@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Laravel\Sanctum\Http\Controllers\CsrfCookieController;
-
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,9 +16,14 @@ use Laravel\Sanctum\Http\Controllers\CsrfCookieController;
 |
 */
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+//GET METHODS
+
+//user route
+Route::get('/user', [UserController::class, 'index']);
+
+//profile route
+Route::get('/profile/{id}', [ProfileController::class, 'show']);
 
 
 
