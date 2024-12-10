@@ -7,10 +7,10 @@ import ForumOptions from './components/ForumOptions.vue';
 
 <template>
   <!--Forum title-->
-  <ForumTitle/>
+  <ForumTitle :key="$route.fullPath" />
   <!--Forum title-->
   <!--Forum Options-->
-  <ForumOptions/>
+  <ForumOptions :key="$route.fullPath" />
   <!--Forum Options-->
-  <RouterView />
+  <RouterView :key="$route.fullPath" />
 </template>

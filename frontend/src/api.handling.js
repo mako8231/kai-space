@@ -4,6 +4,7 @@ export const verifySession = async function(){
     let response = await endpointReq("GET", '/api/user', {})
       .then((res) => {
         return res
+        console.log(res);
       })
       .catch(err => {
         console.log(err);
