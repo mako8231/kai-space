@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@432&family=Shadows+Into+Light&display=swap');
 
+[v-cloak] {
+    display: none;
+}
+
+
 body {
     font-family: "Parkinsans", sans-serif;
     font-optical-sizing: auto;

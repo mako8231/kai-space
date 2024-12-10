@@ -28,11 +28,7 @@ export async function endpointReq(method, route, data)
     {
         //Using axios to calling out to the endpoint route 
         const response = await axios(config);
-
-        //if everything works, give the response 
-        console.log(response);
-
-        return response.data;
+        return response;
 
     } catch (err) {
         console.log("Error during fetch: ", err)

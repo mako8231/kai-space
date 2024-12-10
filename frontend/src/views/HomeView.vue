@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row pt-4 mx-4">
       <div class="d-flex justify-content-center pb-4">
-        <h2 class="form-title">A to our forum!!!</h2>
+        <h2 class="form-title">Welcome to our forum!!!</h2>
       </div>
       <hr>
       <div class="row">

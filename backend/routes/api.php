@@ -20,7 +20,7 @@ use App\Http\Controllers\ProfileController;
 //GET METHODS
 
 //user route
-Route::get('/user', [UserController::class, 'index']);
+Route::middleware("auth:sanctum")->get('/user', [UserController::class, 'index']);
 
 //profile route
 Route::get('/profile/{id}', [ProfileController::class, 'show']);

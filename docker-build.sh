@@ -11,3 +11,7 @@ docker compose build
 #take up the containers 
 docker compose up -d 
 
+docker exec -it kai-space php artisan config:cache
+docker exec -it kai-space php artisan key:generate
+docker exec -it kai-space php artisan config:cache
+
