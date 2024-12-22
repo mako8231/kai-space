@@ -32,12 +32,6 @@ services:
   node:
     platform: linux/x86_64 #this line is optional if you are using Mac Silicon chip (M1/M2/M3)
     develop:
-      watch:
-        - action: sync+restart
-        - path: ./frontend
-        - target: /var/www
-        - ignore: 
-            - node-modules
     build:
       context: .
       dockerfile: dockerfile.node

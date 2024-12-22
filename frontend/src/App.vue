@@ -12,5 +12,5 @@ import ForumOptions from './components/ForumOptions.vue';
   <!--Forum Options-->
   <ForumOptions :key="$route.fullPath" />
   <!--Forum Options-->
-  <RouterView :key="$route.fullPath" />
+  <RouterView />
 </template>

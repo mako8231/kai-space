@@ -10,6 +10,20 @@ import TopThreadCommentary from '@/components/ThreadPost/TopThreadCommentary.vue
 <template>
     <div class="pt-4 container forum-list-container">
        <div class="row">
+            <!--Thread content section-->
+            <div class="col-lg-8">
+                <div class="container">
+                    <h4>Thread title</h4>
+                    <span class="published-date-label">Published on: 20/10/2022</span>
+                    <p><span class="bold-text">On:</span> Drawings</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia optio, necessitatibus ut voluptatem animi rem, unde laboriosam pariatur corporis voluptates quasi alias fugiat quae libero veniam id explicabo nemo non?</p>
+                    <ImageGallery/>
+                </div>
+    
+                <hr>
+
+            </div>
+
             <div class="col-lg-4">
                 <h4>Credits:</h4>
                 <hr>
@@ -66,24 +80,10 @@ import TopThreadCommentary from '@/components/ThreadPost/TopThreadCommentary.vue
                 <CommentForm></CommentForm>
                 
             </div>
-            <!--Thread content section-->
-            <div class="col-lg-8">
-                <div class="container">
-                    <h4>Thread title</h4>
-                    <span class="published-date-label">Published on: 20/10/2022</span>
-                    <p><span class="bold-text">On:</span> Drawings</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia optio, necessitatibus ut voluptatem animi rem, unde laboriosam pariatur corporis voluptates quasi alias fugiat quae libero veniam id explicabo nemo non?</p>
-                    <ImageGallery/>
-                </div>
-    
-                <hr>
 
-            </div>
        </div>
        <div class="row">
-         <div class="col-lg-4">
-            
-         </div>
+
 
          <div class="col-lg-8">
             <div class="container">
