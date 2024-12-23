@@ -12,3 +12,15 @@ export const verifySession = async function(){
 
     return response;
 }
+
+export const logout = async function () {
+  let response = await endpointReq('POST', '/logout', {})
+    .then((res) => {
+      return res
+    })
+    .catch(err => {
+      return err; 
+    })
+  
+  return response; 
+}

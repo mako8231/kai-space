@@ -1,9 +1,11 @@
 
 <script>
 
-import { verifySession } from '@/api.handling';
+import { verifySession, logout } from '@/api.handling';
 import { onMounted } from 'vue';
 import { ref } from 'vue';
+import router from '@/main';
+
 
 //Set logged_in as reference value to be accessed by the component
 let logged_in = ref(false)
@@ -19,12 +21,24 @@ export default {
       return session
     },
 
+    async logout() {
+      try {
+        let res = await logout()
+        await router.push('/login')        
+      } catch (err) {
+          console.log(err)
+      }
+    }
+
   },
 
   setup: function(){
     onMounted(async () => {
       let response = await verifySession();
-      logged_in.value = (response.status == 200)
+      if (response !== undefined){      
+        logged_in.value = (response.status == 200) 
+
+      }
     });
   
   },
@@ -50,7 +64,7 @@ export default {
         </div>
         <div v-if="logged" class="d-flex flex-row justify-content-center">
               <a href="#" class="options-link-item nav-link active mx-2">Profile</a>
-              <a href="#" class="options-link-item nav-link active mx-2">LogOut</a>            
+              <a @click="logout()" href="#" class="options-link-item nav-link active mx-2">LogOut</a>            
         </div>
       </div>
     </div>

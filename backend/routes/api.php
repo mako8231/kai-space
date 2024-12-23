@@ -24,6 +24,3 @@ Route::middleware("auth:sanctum")->get('/user', [UserController::class, 'index']
 
 //profile route
 Route::get('/profile/{id}', [ProfileController::class, 'show']);
-
-
-

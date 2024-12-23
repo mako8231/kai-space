@@ -43,7 +43,7 @@ export default {
         <form @submit.prevent="formSubmit" method="POST">
             <div class="row form-login-register">
                 <div class="form-group col-lg-6">
-                    <label for="userEmail"><span class="bold-text">E-mail or Username</span></label>
+                    <label for="userEmail"><span class="bold-text">E-mail</span></label>
                     <input v-model="this.formData.email" type="text" class="form-control" id="userEmail" placeholder="Email or Username">
                 </div>
                 <div class="form-group col-lg-6">
