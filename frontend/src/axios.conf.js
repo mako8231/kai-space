@@ -32,7 +32,7 @@ export async function endpointReq(method, route, data)
 
     } catch (err) {
         console.log("Error during fetch: ", err)
-        return err;
+        throw err;
     }
 
 }

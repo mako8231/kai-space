@@ -11,27 +11,32 @@ export default {
             {
                 "email" : "",
                 "password" : "",
+            },
+
+            errors:
+            {
+                "email": "",
+                "password" : ""    
             }
         }    
     },
 
     methods: {
         formSubmit : async function(e){
-            endpointReq("POST", "/login", this.formData).then(async res => {
-            //If everything went ok...
-            console.log(res);
-            await router.push('/').catch((err) => {
-                console.log("error while redirecting")
+            endpointReq("POST", "/login", this.formData)
+                .then(async res => {
+                //If everything went ok...
+                console.log(res);
+                    await router.push('/')
                 })
-            })
-            .catch(err => {
-                console.log(err);
-                //const error_fields = err.response.data 
-                //Setting the error message 
-                //this.errors.email = error_fields['email']
-                //this.errors.username = error_fields['username']
-                //this.errors.password = error_fields['password']
-            });
+                .catch(err => {
+                    console.log(err);
+                    const error_fields = err.response.data.errors
+                    console.log(error_fields)
+                    //Setting the error message 
+                    this.errors.email = error_fields['email']
+                    this.errors.password = error_fields['password']
+                });
         }
     }
 }
@@ -44,10 +49,24 @@ export default {
             <div class="row form-login-register">
                 <div class="form-group col-lg-6">
                     <label for="userEmail"><span class="bold-text">E-mail</span></label>
+                    <div v-if="this.errors.email?.length">
+                        <span style="color: red">
+                            <ul>
+                                <li v-for="(item, index) in errors.email">{{ item }}</li>
+                            </ul>
+                        </span>
+                    </div>                    
                     <input v-model="this.formData.email" type="text" class="form-control" id="userEmail" placeholder="Email or Username">
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="userPassword"><span class="bold-text">Password</span></label>
+                    <div v-if="this.errors.password?.length">
+                        <span style="color: red">
+                            <ul>
+                                <li v-for="(item, index) in errors.password">{{ item }}</li>
+                            </ul>
+                        </span>
+                    </div>       
                     <input v-model="this.formData.password" type="password" class="form-control" id="userPassword" placeholder="Password">
                 </div>
                 <div class="form-group col-lg">
