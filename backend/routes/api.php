@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Sanctum\Http\Controllers\CsrfCookieController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,3 +26,6 @@ Route::middleware("auth:sanctum")->get('/user', [UserController::class, 'index']
 
 //profile route
 Route::get('/profile/{id}', [ProfileController::class, 'show']);
+
+//posts route
+Route::middleware('auth:sanctum')->post('/posts', [PostController::class, 'store']);
