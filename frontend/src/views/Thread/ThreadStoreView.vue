@@ -1,21 +1,29 @@
 
 <script>
 import ThreadForm from '@/components/ThreadForm.vue';
-import { ref } from 'vue';
 import { verifySession } from '@/api.handling'
 import router from '@/main';
+import {ref} from 'vue'
 
+let sessionCheck = ref(false)   
+        
 export default {
     components: {
         ThreadForm
     },
 
+    data: function () {
+        return {
+            visible : sessionCheck
+        }
+    },
 
     setup(){
-        
+             
     },
 
     async mounted() {
+        sessionCheck.value = false 
         console.log("HOIIII")
         const res = await verifySession().then((res) => {
             console.log(res)
@@ -29,6 +37,8 @@ export default {
             return router.push('/404')
         }
 
+        sessionCheck.value = (res.status == 200);
+
     }
 
 }
@@ -38,5 +48,5 @@ export default {
 </script>
 
 <template>
-    <ThreadForm></ThreadForm>
+    <ThreadForm v-if="this.visible"></ThreadForm>
 </template>
