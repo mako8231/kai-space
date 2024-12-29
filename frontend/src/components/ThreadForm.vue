@@ -1,5 +1,4 @@
 <script>
-
 import UploadInput from '@/components/Forms/UploadInput.vue';
 
 export default {
@@ -30,12 +29,11 @@ export default {
     }
 
 }
-
-
 </script>
 
 <template>
-    <div class="container">
+    <div>
+        <div class="container">
         <form @submit.prevent="" method="POST">
             <div class="row form-login-register">
                 
@@ -77,5 +75,6 @@ export default {
                 
             </div>
         </form>
+        </div>
     </div>
 </template>

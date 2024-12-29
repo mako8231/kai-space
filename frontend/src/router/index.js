@@ -5,8 +5,9 @@ import LoginView from '@/views/LoginView.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import ArtDiscussView from '@/views/Forum/ArtDiscussView.vue'
 import ThreadView from '@/views/Thread/PostView.vue'
-import ThreadStore from '@/views/Thread/ThreadStore.vue'
+import ThreadStore from '@/views/Thread/ThreadStoreView.vue'
 import ProfileView from '@/views/ProfileView.vue'
+import ErrorView404 from '@/views/404View.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,7 +57,12 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: ProfileView,
-    }
+    },
+    {
+      path: '/404',
+      name: '404',
+      component: ErrorView404,
+    },
   ],
 })
 
