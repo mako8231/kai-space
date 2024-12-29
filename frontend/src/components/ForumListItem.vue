@@ -18,11 +18,11 @@
                     </div>
 
                     <div class="row">
-                        <RouterLink class="forum-link" to="/thread"><h4 class="post-list-title">Postagem Teste, post muito legal lalalalaalalala</h4></RouterLink>
+                        <RouterLink class="forum-link" to="/post"><h4 class="post-list-title">Postagem Teste, post muito legal lalalalaalalala</h4></RouterLink>
                     </div>
 
                     <div class="row d-flex">
-                        <RouterLink to="/thread"><img class="rounded mx-auto d-block post-list-thumbnail" src="../assets/pictures/landscape.jpg" alt=""></RouterLink>
+                        <RouterLink to="/post"><img class="rounded mx-auto d-block post-list-thumbnail" src="../assets/pictures/landscape.jpg" alt=""></RouterLink>
                     </div>
                     <hr>
                     <div class="row">

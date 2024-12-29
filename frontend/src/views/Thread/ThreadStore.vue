@@ -18,7 +18,7 @@ export default {
     methods: {
         appendGalleryInput() {
             if (this.galleryItems.length < this.maxCount) {
-                this.galleryItems.push(`Picture #${this.galleryItems.length}`)                
+                this.galleryItems.push(`Picture #${this.galleryItems.length + 1}`)                
             }
 
         },
@@ -40,18 +40,21 @@ export default {
             <div class="row form-login-register">
                 
                 <div class="form-group">
-                    <label for="userEmail"><span class="bold-text">Thread Name</span></label>
-                    <input type="text" class="form-control" id="userEmail" placeholder="Email or Username">
+                    <label for="threadName"><span class="bold-text">Thread Name</span></label>
+                    <input type="text" class="form-control" id="threadName" placeholder="Thread Name">
                 </div>
                 
 
                 <div class="form-group">
-                    <label for="userPassword"><span class="bold-text">Password</span></label>
-                    <textarea type="password" class="form-control" id="userPassword" placeholder="Password"></textarea>
+                    <label for="userPassword"><span class="bold-text">Thread Description</span></label>
+                    <textarea type="text" class="form-control" id="userPassword" placeholder="Write something about:"></textarea>
                 </div>
                 
 
                 <div class="form-group">
+                    <div v-if="this.galleryItems.length > 0">
+                        <label for="">The first uploaded image will become the thread's thumbnail</label>
+                    </div>
                     <div v-for="(inputG, index) in galleryItems">
                         <UploadInput :key="index" :label="inputG"/>
                     </div>
@@ -66,7 +69,7 @@ export default {
                 <div class="form-group col-lg">
                     <div class="container">
                         <div class="row d-flex justify-content-between">
-                            <button class="form-button btn btn-primary">Sign in</button>
+                            <button class="form-button btn btn-primary">Post</button>
                         </div>
                     </div>
                 </div>

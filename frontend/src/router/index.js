@@ -4,7 +4,7 @@ import ForumView from '@/views/ForumView.vue'
 import LoginView from '@/views/LoginView.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import ArtDiscussView from '@/views/Forum/ArtDiscussView.vue'
-import ThreadView from '@/views/Thread/ThreadView.vue'
+import ThreadView from '@/views/Thread/PostView.vue'
 import ThreadStore from '@/views/Thread/ThreadStore.vue'
 import ProfileView from '@/views/ProfileView.vue'
 
@@ -36,8 +36,8 @@ const router = createRouter({
     },
 
     {
-      path: '/thread',
-      name: 'thread',
+      path: '/post',
+      name: 'post',
       component: ThreadView
     },
 
