@@ -27,5 +27,8 @@ Route::middleware("auth:sanctum")->get('/user', [UserController::class, 'index']
 //profile route
 Route::get('/profile/{id}', [ProfileController::class, 'show']);
 
+//threads route
+Route::middleware('auth:sanctum')->post('/thread', [PostController::class, 'store']);
+
 //posts route
 Route::middleware('auth:sanctum')->post('/posts', [PostController::class, 'store']);

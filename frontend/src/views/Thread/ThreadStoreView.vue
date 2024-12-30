@@ -3,7 +3,7 @@
 import ThreadForm from '@/components/ThreadForm.vue';
 import { verifySession } from '@/api.handling'
 import router from '@/main';
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 let sessionCheck = ref(false)   
         
@@ -14,12 +14,9 @@ export default {
 
     data: function () {
         return {
-            visible : sessionCheck
+            visible: sessionCheck,
+            formData: {}
         }
-    },
-
-    setup(){
-             
     },
 
     async mounted() {
@@ -42,8 +39,6 @@ export default {
     }
 
 }
-
-
 
 </script>
 

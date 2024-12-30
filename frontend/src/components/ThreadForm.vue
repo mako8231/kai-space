@@ -10,6 +10,7 @@ export default {
         return {
             galleryItems: [],
             maxCount: 10,
+            formData: {}
         }
     },
 
@@ -38,14 +39,14 @@ export default {
             <div class="row form-login-register">
                 
                 <div class="form-group">
-                    <label for="threadName"><span class="bold-text">Thread Name</span></label>
-                    <input type="text" class="form-control" id="threadName" placeholder="Thread Name">
+                    <label for="title"><span class="bold-text">Thread Name</span></label>
+                    <input type="text" class="form-control" id="title" placeholder="Thread Name">
                 </div>
                 
 
                 <div class="form-group">
-                    <label for="userPassword"><span class="bold-text">Thread Description</span></label>
-                    <textarea type="text" class="form-control" id="userPassword" placeholder="Write something about:"></textarea>
+                    <label for="description"><span class="bold-text">Thread Description</span></label>
+                    <textarea type="text" class="form-control" id="description" placeholder="Write something about:"></textarea>
                 </div>
                 
 
@@ -54,7 +55,7 @@ export default {
                         <label for="">The first uploaded image will become the thread's thumbnail</label>
                     </div>
                     <div v-for="(inputG, index) in galleryItems">
-                        <UploadInput :key="index" :label="inputG"/>
+                        <UploadInput :id="index" :label="inputG"/>
                     </div>
                     <div class="d-flex">
                         <button @click="appendGalleryInput()" class="form-button btn btn-primary mx-2">[+] Add Picture:</button>
