@@ -20,4 +20,4 @@ app.use(router)
 
 app.mount('#app')
 
-export default router;
+export default { router, app };

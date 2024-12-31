@@ -3,14 +3,14 @@ import UploadInput from '@/components/Forms/UploadInput.vue';
 
 export default {
     components: {
-        UploadInput
+        UploadInput,
     },
 
     data: function () {
         return {
             galleryItems: [],
             maxCount: 10,
-            formData: {}
+            formData: {},
         }
     },
 

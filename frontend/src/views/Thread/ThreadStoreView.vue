@@ -3,6 +3,7 @@
 import ThreadForm from '@/components/ThreadForm.vue';
 import { verifySession } from '@/api.handling'
 import router from '@/main';
+import app from '@/main';
 import { ref } from 'vue'
 
 let sessionCheck = ref(false)   
@@ -21,6 +22,9 @@ export default {
 
     async mounted() {
         sessionCheck.value = false 
+
+        this.$parent.$emit("setLoading", true)
+
         console.log("HOIIII")
         const res = await verifySession().then((res) => {
             console.log(res)
@@ -31,11 +35,11 @@ export default {
         })
 
         if (res.status != 200) {
-            return router.push('/404')
+            return this.$router.push('/404')
         }
 
-        sessionCheck.value = (res.status == 200);
-
+        sessionCheck.value = res.status == 200;
+        this.$parent.$emit("setLoading", false)
     }
 
 }

@@ -24,7 +24,7 @@ export default {
     async logout() {
       try {
         let res = await logout()
-        await router.push('/login')
+        await this.$router.push('/login')
         logged_in.value = false;        
       } catch (err) {
           console.log(err)

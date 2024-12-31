@@ -25,7 +25,7 @@ export default {
             endpointReq("POST", "/register", this.formData).then(async res => {
                 //If everything went ok...
                 console.log(res);
-                await router.push('/').catch((err) => {
+                await this.$router.push('/').catch((err) => {
                     console.log("error while redirecting")
                 })
             })

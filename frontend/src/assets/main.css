@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@432&family=Shadows+Into+Light&display=swap');
 
+@keyframes myAnim {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 [v-cloak] {
     display: none;
 }
@@ -262,4 +276,15 @@ body {
     margin-bottom: 1rem;
     background-color: rgb(110, 158, 138);
     border-color: rgb(110, 158, 138);
+}
+
+.loading {
+    animation: myAnim 2s cubic-bezier(0.85, 0, 0.15, 1);
+    animation-iteration-count: infinite;
+    padding: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.loading .loading-icon {
+    font-size: 5rem;
 }

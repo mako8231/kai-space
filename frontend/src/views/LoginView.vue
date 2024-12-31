@@ -27,7 +27,7 @@ export default {
                 .then(async res => {
                 //If everything went ok...
                 console.log(res);
-                    await router.push('/')
+                    await this.$router.push('/')
                 })
                 .catch(err => {
                     console.log(err);
