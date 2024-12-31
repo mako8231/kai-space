@@ -1,10 +1,27 @@
 <script>
+import { ref } from 'vue'
+import { fileToBase64 } from '@/frontend/fileHandler';
+
+let uploadFile = ref(null);
+
 export default {
     props: ['id', 'label'],
+
+    data(){
+        return {
+            imageFile: ''
+        }
+    },
 
     methods: {
         generateID: function () {
             return `picture_${this.id}`
+        },
+
+        handleFile: async function ($event) {
+            const file = $event.target.files[0];
+            await fileToBase64(file)
+
         }
     }
 
@@ -12,6 +29,6 @@ export default {
 </script>
 
 <template>
-    <label for="userPassword"><span class="bold-text">{{ this.label }}</span></label>
-    <input type="file" class="form-control" :id=generateID() required>
+    <label :for="generateID()"><span class="bold-text">{{ this.label }}</span></label>
+    <input @change="handleFile($event)" type="file" class="form-control" :id=generateID() required>
 </template>
