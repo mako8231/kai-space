@@ -24,8 +24,16 @@ export default {
         },
         removeGalleryInput() {
             if (this.galleryItems.length > 0) {
+                delete this.formData[`picture_${this.galleryItems.length - 1}`];
                 this.galleryItems.pop();   
             }
+        },
+        addUploadedPicture(index, file) {
+            this.formData[index] = file; 
+            console.log(this.formData);
+        },
+        submitThread() {
+            console.log(this.formData);
         }
     }
 
@@ -35,18 +43,18 @@ export default {
 <template>
     <div>
         <div class="container">
-        <form @submit.prevent="" method="POST">
+        <form @submit.prevent="submitThread()" method="POST">
             <div class="row form-login-register">
                 
                 <div class="form-group">
                     <label for="title"><span class="bold-text">Thread Name</span></label>
-                    <input type="text" class="form-control" id="title" placeholder="Thread Name">
+                    <input v-model="this.formData['title']" type="text" class="form-control" id="title" placeholder="Thread Name">
                 </div>
                 
 
                 <div class="form-group">
                     <label for="description"><span class="bold-text">Thread Description</span></label>
-                    <textarea type="text" class="form-control" id="description" placeholder="Write something about:"></textarea>
+                    <textarea v-model="this.formData['body']" type="text" class="form-control" id="description" placeholder="Write something about:"></textarea>
                 </div>
                 
 
@@ -55,7 +63,7 @@ export default {
                         <label for="">The first uploaded image will become the thread's thumbnail</label>
                     </div>
                     <div v-for="(inputG, index) in galleryItems">
-                        <UploadInput :id="index" :label="inputG"/>
+                        <UploadInput @fileUploaded="(id, file) => {addUploadedPicture(id, file)}" :id="index" :label="inputG"/>
                     </div>
                     <div class="d-flex">
                         <button @click="appendGalleryInput()" class="form-button btn btn-primary mx-2">[+] Add Picture:</button>

@@ -20,8 +20,8 @@ export default {
 
         handleFile: async function ($event) {
             const file = $event.target.files[0];
-            await fileToBase64(file)
-
+            uploadFile.value = await fileToBase64(file)
+            this.$emit('fileUploaded', this.generateID(), uploadFile.value);
         }
     }
 
