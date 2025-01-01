@@ -2,8 +2,7 @@
 <script>
 import ThreadForm from '@/components/ThreadForm.vue';
 import { verifySession } from '@/api.handling'
-import router from '@/main';
-import app from '@/main';
+import { endpointReq } from '@/axios.conf';
 import { ref } from 'vue'
 
 let sessionCheck = ref(false)   
@@ -16,7 +15,19 @@ export default {
     data: function () {
         return {
             visible: sessionCheck,
-            formData: {}
+        }
+    },
+
+    methods: {
+        formSubmit: function (data) {
+            console.log(data);
+            endpointReq("POST", "/api/thread", data)
+                .then((res) => {
+                    console.log(res);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
         }
     },
 
@@ -35,6 +46,7 @@ export default {
         })
 
         if (res.status != 200) {
+            this.$parent.$emit("setLoading", false)
             return this.$router.push('/404')
         }
 
@@ -47,5 +59,5 @@ export default {
 </script>
 
 <template>
-    <ThreadForm v-if="this.visible"></ThreadForm>
+    <ThreadForm @transferFormData="(data) => {formSubmit(data)}" v-if="this.visible"></ThreadForm>
 </template>

@@ -19,9 +19,17 @@ export default {
         },
 
         handleFile: async function ($event) {
+            let root = this.$parent
+            //Call the loading component from the App
+            root.$parent.$emit("setLoading", true)
+
             const file = $event.target.files[0];
             uploadFile.value = await fileToBase64(file)
             this.$emit('fileUploaded', this.generateID(), uploadFile.value);
+
+            //Close the loading component
+            root.$parent.$emit("setLoading", false)
+            
         }
     }
 

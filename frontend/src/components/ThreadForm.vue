@@ -10,7 +10,7 @@ export default {
         return {
             galleryItems: [],
             maxCount: 10,
-            formData: {},
+            formData: {pictures : 0},
         }
     },
 
@@ -18,22 +18,24 @@ export default {
     methods: {
         appendGalleryInput() {
             if (this.galleryItems.length < this.maxCount) {
-                this.galleryItems.push(`Picture #${this.galleryItems.length + 1}`)                
+                this.galleryItems.push(`Picture #${this.galleryItems.length + 1}`) 
+                this.formData.pictures += 1;               
             }
 
         },
         removeGalleryInput() {
             if (this.galleryItems.length > 0) {
                 delete this.formData[`picture_${this.galleryItems.length - 1}`];
-                this.galleryItems.pop();   
+                this.galleryItems.pop();
+                this.formData.pictures -= 1;   
             }
         },
         addUploadedPicture(index, file) {
             this.formData[index] = file; 
-            console.log(this.formData);
+            
         },
         submitThread() {
-            console.log(this.formData);
+            this.$emit('transferFormData', this.formData);
         }
     }
 

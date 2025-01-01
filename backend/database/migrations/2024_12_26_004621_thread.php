@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('threads', function (Blueprint $table) {
             $table->id();
             $table->string('category');
+            $table->unsignedInteger('rating');
             $table->unsignedBigInteger('author');
             $table->text('title');
             $table->text('body');

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('art_post', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('thread_id');
+            $table->unsignedInteger('rating');
         });
     }
 

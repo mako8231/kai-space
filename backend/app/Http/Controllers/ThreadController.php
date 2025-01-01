@@ -27,5 +27,8 @@ class ThreadController extends Controller
 
         return [];
     }
-    public function store(Request $request) {}
+    public function store(Request $request)
+    {
+        return response()->json($request);
+    }
 }
