@@ -1,6 +1,7 @@
 <script>
 import UploadInput from '@/components/Forms/UploadInput.vue';
 
+
 export default {
     components: {
         UploadInput,
