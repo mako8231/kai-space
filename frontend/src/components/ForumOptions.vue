@@ -36,7 +36,8 @@ export default {
   setup: function(){
     onMounted(async () => {
       let response = await verifySession();
-      if (response !== undefined){      
+      if (response !== undefined) {    
+        console.log(response)  
         logged_in.value = (response.status == 200) 
 
       }

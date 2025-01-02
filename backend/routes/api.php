@@ -34,3 +34,7 @@ Route::post('/thread', [ThreadController::class, 'store'])
 
 //posts route
 Route::middleware('auth:sanctum')->post('/posts', [PostController::class, 'store']);
+
+
+//pictures route
+Route::get('/picture/{id}');

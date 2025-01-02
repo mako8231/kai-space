@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('title');
             $table->text('body');
             $table->unsignedBigInteger('art_post_id')->nullable(true);
+            $table->unsignedBigInteger('gallery_id');
             $table->timestamps();
         });
     }

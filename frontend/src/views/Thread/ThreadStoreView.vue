@@ -19,15 +19,42 @@ export default {
     },
 
     methods: {
-        formSubmit: function (data) {
-            console.log(data);
-            endpointReq("POST", "/api/thread", data)
+        formSubmit: async function (data) {
+            const authorData = await this.getLoggedProfile();
+            if (authorData === null) {
+                return 
+            }
+
+            //get user profile ID
+            let profile = authorData.data.profile.id;
+            data['author'] = profile;
+
+
+            //Need to work it on exception handling
+            await endpointReq("POST", "/api/thread", data)
                 .then((res) => {
-                    console.log(res);
+                    //console.log(res);
                 })
                 .catch((err) => {
-                    console.log(err);
+                    //console.log(err);
                 })
+        },
+        getLoggedProfile: async function() {
+            const res = await endpointReq('GET', '/api/user')
+                .then((res) => {
+                    return res;        
+                })
+                .catch(err => {
+                    return err
+                })
+
+            if (res.status === 200) {
+                return res      
+            } else {
+                return null
+            }
+
+            
         }
     },
 
