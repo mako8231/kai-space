@@ -9,6 +9,15 @@ class Thread extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'body',
+        'category',
+        'rating',
+        'author',
+        'art_post_id',
+    ];
+
     public function profile()
     {
         return $this->belongsTo(Profile::class);

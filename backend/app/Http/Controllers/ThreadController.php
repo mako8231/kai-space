@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use App\Models\Thread;
 
 class ThreadController extends Controller
 {
@@ -56,6 +57,11 @@ class ThreadController extends Controller
             return response()->json($errors)->setStatusCode(422);
         }
 
-        return response()->json(['sadsasadsa' => 10]);
+        //create the thread post
+        //Thread::create(['body' => 'blablabla', 'title' => 'aaa', 'category' => 'hello', 'rating' => 0, 'author' => 0, 'art_post_id' => NULL])
+
+        $thread = Thread::create([]);
+
+        return response()->json();
     }
 }

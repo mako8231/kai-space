@@ -6,6 +6,7 @@ use Laravel\Sanctum\Http\Controllers\CsrfCookieController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ThreadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,8 @@ Route::middleware("auth:sanctum")->get('/user', [UserController::class, 'index']
 Route::get('/profile/{id}', [ProfileController::class, 'show']);
 
 //threads route
-Route::middleware('auth:sanctum')->post('/thread', [PostController::class, 'store']);
+Route::post('/thread', [ThreadController::class, 'store'])
+    ->middleware('auth:sanctum');
 
 //posts route
 Route::middleware('auth:sanctum')->post('/posts', [PostController::class, 'store']);
