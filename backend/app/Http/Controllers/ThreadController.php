@@ -18,7 +18,7 @@ class ThreadController extends Controller
         ];
 
         //check the pictures array:
-        if (count($request->pictures) > 0) {
+        if (sizeof($request->pictures) > 0) {
             //add the following rules:
             $pictures_rules = [
                 'pictures.*.type' => ['required', 'string', Rule::in([
@@ -47,6 +47,15 @@ class ThreadController extends Controller
     }
     public function store(Request $request)
     {
-        return response()->json($request);
+        //Validate the form
+        $errors = $this->formValidator($request);
+
+
+        //Check the size of the errors
+        if (sizeof($errors) > 0) {
+            return response()->json($errors)->setStatusCode(422);
+        }
+
+        return response()->json(['sadsasadsa' => 10]);
     }
 }
