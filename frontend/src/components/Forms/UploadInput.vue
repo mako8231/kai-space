@@ -40,7 +40,8 @@ export default {
             console.log(file);
             if (allowedTypes.value[file.type] !== undefined) {
                 
-                uploadFile.value = await fileToBase64(file)
+                let base64String = await fileToBase64(file)
+                uploadFile.value = {type: file.type, fileString: base64String}
                 this.$emit('fileUploaded', this.generateID(), uploadFile.value);
 
                 //Close the loading component
@@ -62,7 +63,7 @@ export default {
     <label :for="generateID()"><span class="bold-text">{{ this.label }}</span></label>
     <div v-if="warns.length > 0">
         
-        <label v-for="warn in warns" class="bold-text" style="color: rgb(255, 255, 0)">{{ warn }}</label>
+        <label v-for="warn in warns" class="bold-text" style="color: rgb(199, 115, 5)">{{ warn }}</label>
     
     </div>
     <input ref='image-input' @change="handleFile($event)" type="file" class="form-control" :id=generateID() required>

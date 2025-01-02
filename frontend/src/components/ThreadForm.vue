@@ -11,7 +11,7 @@ export default {
         return {
             galleryItems: [],
             maxCount: 10,
-            formData: {pictures : 0},
+            formData: {pictures : []},
         }
     },
 
@@ -19,8 +19,7 @@ export default {
     methods: {
         appendGalleryInput() {
             if (this.galleryItems.length < this.maxCount) {
-                this.galleryItems.push(`Picture #${this.galleryItems.length + 1}`) 
-                this.formData.pictures += 1;               
+                this.galleryItems.push(`Picture #${this.galleryItems.length + 1}`)              
             }
 
         },
@@ -28,12 +27,12 @@ export default {
             if (this.galleryItems.length > 0) {
                 delete this.formData[`picture_${this.galleryItems.length - 1}`];
                 this.galleryItems.pop();
-                this.formData.pictures -= 1;   
+                //also remove the sent file
+                this.formData.pictures.pop();
             }
         },
         addUploadedPicture(index, file) {
-            this.formData[index] = file; 
-            
+            this.formData.pictures.push(file);
         },
         submitThread() {
             this.$emit('transferFormData', this.formData);

@@ -13,5 +13,5 @@ docker compose up -d
 
 docker exec -it kai-space php artisan config:clear
 docker exec -it kai-space php artisan key:generate
+docker exec -it kai-space php artisan config:clear
 docker exec -it kai-space php artisan config:cache
-
