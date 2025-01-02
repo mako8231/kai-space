@@ -11,6 +11,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./backend:/var/www
+      - ./configuration/upload.ini:/usr/local/etc/php/conf.d/upload.ini
     ports:
       - "9000:9000"
     networks:

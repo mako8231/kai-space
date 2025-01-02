@@ -16,6 +16,7 @@ class Thread extends Model
         'rating',
         'author',
         'art_post_id',
+        'gallery_id'
     ];
 
     public function profile()

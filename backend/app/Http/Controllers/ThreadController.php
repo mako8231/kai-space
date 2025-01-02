@@ -103,8 +103,12 @@ class ThreadController extends Controller
             'category' => 'dummy',
             'rating' => 0,
             'author' => $request->author,
-            'art_post_id' => null
+            'art_post_id' => null,
+            'gallery_id' => $gallery->id
         ]);
+
+        $gallery->thread_id = $thread->id;
+        $gallery->save();
 
         return response()->json($thread);
     }
