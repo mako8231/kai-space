@@ -7,6 +7,12 @@ use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use App\Models\Thread;
+use Illuminate\Support\Str;
+
+//import models
+use App\Models\Gallery;
+use App\Models\Picture;
+
 
 class ThreadController extends Controller
 {
@@ -48,6 +54,13 @@ class ThreadController extends Controller
     }
     public function store(Request $request)
     {
+        $mime_list = [
+            "image/jpeg" => 'jpg',
+            "image/jpg" => 'jpg',
+            "image/png" => 'png',
+            "image/webp" => 'webp'
+        ];
+
         //Validate the form
         $errors = $this->formValidator($request);
 
@@ -58,6 +71,16 @@ class ThreadController extends Controller
         }
 
         //create the thread post
+
+        //check for existing pictures:
+
+        if (sizeof($request->pictures) > 0) {
+            //decode the base64 string
+            foreach ($request->pictures as $picture) {
+                Str::random(10);
+            }
+        }
+
         //Thread::create(['body' => 'blablabla', 'title' => 'aaa', 'category' => 'hello', 'rating' => 0, 'author' => 0, 'art_post_id' => NULL])
 
         $thread = Thread::create([]);

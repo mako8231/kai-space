@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Gallery extends Model
 {
     use HasFactory;
+
+    protected $fillable = [];
+
+    public function thread()
+    {
+        return $this->belongsTo(Thread::class);
+    }
+
+    public function pictures()
+    {
+        return $this->hasMany(Picture::class);
+    }
 }

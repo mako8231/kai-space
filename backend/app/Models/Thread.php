@@ -28,4 +28,14 @@ class Thread extends Model
     {
         return $this->hasOne(Post::class);
     }
+
+    public function gallery()
+    {
+        return $this->hasOne(Gallery::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+    }
 }
