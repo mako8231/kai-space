@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   app:
@@ -11,6 +11,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./backend:/var/www
+      - ./storage/app/public:/var/www/public/storage
     ports:
       - "9000:9000"
     networks:
@@ -27,7 +28,7 @@ services:
     depends_on:
       - app
     networks:
-      - app-network        
+      - app-network
 
   node:
     platform: linux/x86_64 #this line is optional if you are using Mac Silicon chip (M1/M2/M3)
@@ -40,7 +41,7 @@ services:
       - ./frontend:/var/www
     container_name: kai-space-front
     ports:
-    - "3000:3000"
+      - "3000:3000"
     restart: unless-stopped
     networks:
       - app-network
