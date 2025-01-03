@@ -13,8 +13,7 @@ class PictureController extends Controller
 {
     public function index(Request $request, $id)
     {
-        $manager = new ImageManager(new Driver());
-        $file_url = Picture::find($id)->file_url;
-        return $manager->read($file_url);
+        $file_url = (storage_path('app/' . Picture::find($id)->file_url));
+        return response()->file($file_url);
     }
 }
