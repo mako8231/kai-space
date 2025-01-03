@@ -288,3 +288,16 @@ body {
 .loading .loading-icon {
     font-size: 5rem;
 }
+
+.error-field div {
+    margin-top: 0rem;
+    background-color: rgb(190, 131, 131);
+    border-radius: 05px;
+    padding: 10px;
+    border-style: dashed;
+    border-color: rgb(163, 70, 70);
+}
+
+.error-field div .container {
+    border-style: none;
+}

@@ -3,23 +3,28 @@
 import ThreadForm from '@/components/ThreadForm.vue';
 import { verifySession } from '@/api.handling'
 import { endpointReq } from '@/axios.conf';
+import ErrorField from '@/components/ErrorField.vue'
+import { generateErrorMessage } from '@/frontend/errors'
 import { ref } from 'vue'
 
 let sessionCheck = ref(false)   
         
 export default {
     components: {
-        ThreadForm
+        ThreadForm,
+        ErrorField
     },
 
     data: function () {
         return {
             visible: sessionCheck,
+            errors: []
         }
     },
 
     methods: {
         formSubmit: async function (data) {
+            this.$parent.$emit("setLoading", false)
             const authorData = await this.getLoggedProfile();
             if (authorData === null) {
                 return 
@@ -33,11 +38,15 @@ export default {
             //Need to work it on exception handling
             await endpointReq("POST", "/api/thread", data)
                 .then((res) => {
-                    //console.log(res);
+                    this.$parent.$emit("setLoading", false)
+            
+                    console.log(res);
                 })
                 .catch((err) => {
-                    //console.log(err);
+                    this.$parent.$emit("setLoading", false)
+                    this.errors = generateErrorMessage(err.response)
                 })
+            
         },
         getLoggedProfile: async function() {
             const res = await endpointReq('GET', '/api/user')
@@ -86,5 +95,6 @@ export default {
 </script>
 
 <template>
+    <ErrorField :errors="this.errors"></ErrorField>
     <ThreadForm @transferFormData="(data) => {formSubmit(data)}" v-if="this.visible"></ThreadForm>
 </template>
