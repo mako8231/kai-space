@@ -48,7 +48,7 @@ export default {
             <div class="row form-login-register">
                 <div class="form-group col-lg-6">
                     <label for="userEmail"><span class="bold-text">E-mail</span></label>
-                    <input v-model="this.formData.email" type="email" class="form-control" id="userEmail" placeholder="Email">
+                    <input v-model="this.formData.email" type="email" class="form-control" id="userEmail" placeholder="Email" required>
                     <div v-if="this.errors.email?.length">
                         <span style="color: red">
                             <ul>
@@ -59,7 +59,7 @@ export default {
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="userName"><span class="bold-text">Username</span></label>
-                    <input v-model="this.formData.username" type="text" class="form-control" id="userName" placeholder="Username">
+                    <input v-model="this.formData.username" type="text" class="form-control" id="userName" placeholder="Username" required>
                     <div v-if="this.errors.username?.length">
                         <span style="color: red">
                             <ul>
@@ -70,7 +70,7 @@ export default {
                 </div>
                 <div class="form-group col-lg-12">
                     <label for="userPassword"><span class="bold-text">Password</span></label>
-                    <input v-model="this.formData.password" type="password" class="form-control" id="userPassword" placeholder="Password">
+                    <input v-model="this.formData.password" type="password" class="form-control" id="userPassword" placeholder="Password" required>
                     <div v-if="this.errors.password?.length">
                         <span style="color: red">
                             <ul>
@@ -81,7 +81,7 @@ export default {
                 </div>
                 <div class="form-group col-lg-12">
                     <label for="userPasswordConfirm"><span class="bold-text">Confirm Password</span></label>
-                    <input v-model="this.formData.password_confirmation" type="password" class="form-control" id="userPasswordConfirm" placeholder="Password">
+                    <input v-model="this.formData.password_confirmation" type="password" class="form-control" id="userPasswordConfirm" placeholder="Password" required>
                 </div>
                 <div class="form-group">
                     <div class="container">

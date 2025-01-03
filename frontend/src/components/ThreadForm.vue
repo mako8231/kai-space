@@ -50,13 +50,13 @@ export default {
                 
                 <div class="form-group">
                     <label for="title"><span class="bold-text">Thread Name</span></label>
-                    <input v-model="this.formData['title']" type="text" class="form-control" id="title" placeholder="Thread Name">
+                    <input v-model="this.formData['title']" type="text" class="form-control" id="title" placeholder="Thread Name" required>
                 </div>
                 
 
                 <div class="form-group">
                     <label for="description"><span class="bold-text">Thread Description</span></label>
-                    <textarea v-model="this.formData['body']" type="text" class="form-control" id="description" placeholder="Write something about:"></textarea>
+                    <textarea v-model="this.formData['body']" type="text" class="form-control" id="description" placeholder="Write something about:" required></textarea>
                 </div>
                 
 

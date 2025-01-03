@@ -56,7 +56,7 @@ export default {
                             </ul>
                         </span>
                     </div>                    
-                    <input v-model="this.formData.email" type="text" class="form-control" id="userEmail" placeholder="Email or Username">
+                    <input v-model="this.formData.email" type="text" class="form-control" id="userEmail" placeholder="Email or Username" required>
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="userPassword"><span class="bold-text">Password</span></label>
@@ -67,7 +67,7 @@ export default {
                             </ul>
                         </span>
                     </div>       
-                    <input v-model="this.formData.password" type="password" class="form-control" id="userPassword" placeholder="Password">
+                    <input v-model="this.formData.password" type="password" class="form-control" id="userPassword" placeholder="Password" required>
                 </div>
                 <div class="form-group col-lg">
                     <div class="container">

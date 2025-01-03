@@ -49,7 +49,7 @@ export default {
             } else {
                 //add the error message 
                 this.warns.push("Invalid file type, use the following formats: JPG, PNG, WEBP");
-                input.value = '';
+                $event.target.value = ''
                 root.$parent.$emit("setLoading", false)
                 
             }
