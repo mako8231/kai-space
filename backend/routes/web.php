@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PictureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,10 @@ Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });
 
+Route::get('/picture/{id}/', [PictureController::class, 'index']);
+
 /**Route::get('/test', function(){
     return view('test');
 });**/
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
