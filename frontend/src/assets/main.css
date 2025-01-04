@@ -301,3 +301,24 @@ body {
 .error-field div .container {
     border-style: none;
 }
+
+.thread-body {
+    padding: 3px;
+}
+
+.thread-body .disc-title .title {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.thread-body .disc-title .author {
+    font-style: italic;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.thread-body .thread-banner {
+    margin-top: 3rem;
+    width: 800px;
+    height: auto;
+}

@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ThreadController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,5 @@ Route::post('/thread', [ThreadController::class, 'store'])
 //posts route
 Route::middleware('auth:sanctum')->post('/posts', [PostController::class, 'store']);
 
-
-//pictures route
-Route::get('/picture/{id}');
+//Galleries route
+Route::get('/gallery/{id}', [GalleryController::class, 'index']);

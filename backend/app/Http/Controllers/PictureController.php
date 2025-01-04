@@ -13,7 +13,12 @@ class PictureController extends Controller
 {
     public function index(Request $request, $id)
     {
-        $file_url = (storage_path('app/' . Picture::find($id)->file_url));
-        return response()->file($file_url);
+        $picture = Picture::find($id);
+        if ($picture) {
+            $file_url = (storage_path('app/' . $picture->file_url));
+            return response()->file($file_url);
+        }
+
+        return abort(404);
     }
 }

@@ -25,6 +25,7 @@ export default {
     methods: {
         formSubmit: async function (data) {
             this.$parent.$emit("setLoading", false)
+            console.log(data);
             const authorData = await this.getLoggedProfile();
             if (authorData === null) {
                 return 
