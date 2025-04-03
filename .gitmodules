@@ -4,3 +4,5 @@
 [submodule "backend"]
 	path = backend
 	url = https://github.com/mako8231/kai-space-backend
+[submodule "frontend/"]
+	url = https://github.com/mako8231/kai-space-front
