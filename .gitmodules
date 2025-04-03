@@ -1,8 +1,7 @@
-[submodule "frontend"]
-	path = frontend
-	url = https://github.com/mako8231/kai-space-frontend
 [submodule "backend"]
 	path = backend
 	url = https://github.com/mako8231/kai-space-backend
-[submodule "frontend/"]
+
+[submodule "frontend"]
+	path = frontend
 	url = https://github.com/mako8231/kai-space-front
